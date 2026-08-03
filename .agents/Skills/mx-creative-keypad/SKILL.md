@@ -53,6 +53,7 @@ Ask the user only when a missing choice changes the layout or action behavior. I
 ## SVG icon design
 
 - Use a `64 x 64` or `32 x 32` view box.
+- Encode SVG files as UTF-8 without a byte-order mark (BOM). Logi Options+ does not render embedded SVG payloads that start with the UTF-8 BOM bytes `EF BB BF`.
 - Use only colors from [the Material Design color palette](references/MaterialColors.md) in SVG files.
 - Use simple paths, shapes, and short text that remain clear on a small LCD key.
 - Use one semantic accent color per page or action group.
@@ -74,6 +75,7 @@ Verify all of these conditions:
 - Every layout control action resolves to a defined macro, profile action, or installed native action.
 - Every custom action has the expected `.ict` file.
 - Every embedded base64 image decodes successfully.
+- Every source and decoded SVG uses UTF-8 without a BOM.
 - Every embedded SVG parses as XML.
 - Every embedded SVG has a matching source copy in the project-root `./icons/` folder.
 - Page and control counts match the requested hardware layout.
