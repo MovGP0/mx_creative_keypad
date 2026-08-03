@@ -34,7 +34,7 @@ Ask the user only when a missing choice changes the layout or action behavior. I
 6. Create an action map before creating files. Record every page, control index, action identifier, label, and icon.
 7. Keep standalone profiles independent from native plugins unless the user explicitly requests a plugin-backed profile.
 8. Generate package files in a task-specific `.temp/` directory.
-9. Generate one clear SVG icon for each action. Embed each SVG as base64 in its matching `.ict` action icon template.
+9. Generate one clear SVG icon for each action. Keep a copy of each SVG file in the project-root `./icons/` folder. Create the folder when it does not exist. Embed each SVG as base64 in its matching `.ict` action icon template.
 10. Create the ZIP archive with the package files at the archive root. Rename the final ZIP file to `.lp5`.
 11. Validate the archive, JSON, actions, and SVG content before delivery.
 12. Delete only the task-specific temporary directory after validation.
@@ -53,6 +53,7 @@ Ask the user only when a missing choice changes the layout or action behavior. I
 ## SVG icon design
 
 - Use a `64 x 64` or `32 x 32` view box.
+- Use only colors from [the Material Design color palette](references/MaterialColors.md) in SVG files.
 - Use simple paths, shapes, and short text that remain clear on a small LCD key.
 - Use one semantic accent color per page or action group.
 - Use error colors only for destructive actions such as Stop or Exit.
@@ -74,6 +75,7 @@ Verify all of these conditions:
 - Every custom action has the expected `.ict` file.
 - Every embedded base64 image decodes successfully.
 - Every embedded SVG parses as XML.
+- Every embedded SVG has a matching source copy in the project-root `./icons/` folder.
 - Page and control counts match the requested hardware layout.
 - The archive contains no temporary files or source-only content.
 - The original example and installed Logi profile data are unchanged.
