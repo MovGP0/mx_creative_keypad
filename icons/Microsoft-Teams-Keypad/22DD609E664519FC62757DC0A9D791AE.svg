@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <title>Important</title>
+  <rect width="64" height="64" rx="12" fill="#212121"/>
+  <rect x="5" y="5" width="54" height="54" rx="9" fill="#263238" stroke="#009688" stroke-width="2"/>
+  <text x="32" y="38" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">!</text>
+  <circle cx="12" cy="52" r="2" fill="#009688"/>
+</svg>
